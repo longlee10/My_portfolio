@@ -14,4 +14,12 @@ Author: Hoang Long Le
     </div>
   </body>
   <%- include('./partials/footer.ejs') %>
+  <script>
+    var btn = document.getElementById("contactbtn");
+    btn.onclick = captureInfo;
+    function captureInfo(e) {
+      e.preventDefault();
+      window.location = "http://localhost:3000/";
+    }
+  </script>
 </html>
