@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container">
+      <h1><%= title %></h1>
+      <table>
+        <thead>
+          <tr>
+            <th>NAME</th>
+            <th>PHONE NUMBER</th>
+            <th>EMAIL</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i< contact.length; i++) { %>
+          <tr>
+            <td><%= contact[i].name %></td>
+            <td><%= contact[i].phone %></td>
+            <td><%= contact[i].email %></td>
+            <td>
+              <a href="/edit/<%= contact[i]._id %>">
+                <i class="fa fa-pencil"></i> Edit</a
+              >
+            </td>
+            <td>
+              <a href="/delete/<%= contact[i]._id %>"
+                ><i class="fa fa-trash"></i> Delete</a
+              >
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <br />
+      <a href="/add"><i class="fa fa-plus"></i> ADD CONTACT</a>
+    </div>
+  </body>
+</html>

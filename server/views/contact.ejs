@@ -1,0 +1,48 @@
+<!--/*
+
+Author: Hoang Long Le 
+301236235
+30 September 2022
+*/-->
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div id="template" style="font-size: 18px">
+      <div style="float: left; width: 40%; text-align: right">
+        <img src="./images/My Photo.jpg" alt="" id="myImg" />
+      </div>
+      <div id="contactMe">
+        <h1>Contact Me</h1>
+        <form
+          action="mailto:longquan98@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <label for="fname">Full Name</label>
+          <input type="text" class="name" id="name" /><br /><br />
+          <label for="email">Email</label>
+          <input type="text" class="email" id="email" /><br /><br />
+          <label for="msg">Message</label>
+          <input type="text" class="form" id="message" /> <br /><br />
+          <button class="btn" type="submit">Contact Me</button>
+        </form>
+
+        <p style="font-family: garamond; color: gray; font-size: 25px">
+          Email: longquan98@gmail.com <br /><br />
+          Tel: 647-906-6253 <br />
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    var btn = document.getElementById("contactbtn");
+    btn.onclick = captureInfo;
+    function captureInfo(e) {
+      e.preventDefault();
+      window.location = "http://localhost:3000/";
+    }
+  </script>
+</html>
